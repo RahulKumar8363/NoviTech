@@ -5,24 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: red;
+            margin: 0;
+            padding: 0;
+        }
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: whitesmoke;
+        }
+        .Large img{
+            width: 400px;
+            height: 300px;
+            border-radius: 50px;
+        }
+        .Large button{
+            width:300px;
+            height: 50px;
+            background-color: black;
+            color: antiquewhite;
+        }
+        .Medium{
+            background-color: aliceblue;
+            width: 400px;
+            text-align: center;
+            border: 30px green double;
+            border-radius: 50px;
+            font-size: large;
+
+        }
+        .Medium img{
+            width: 400px;
+            height: 300px;
+            border-radius: 50px;
+        }
+        .Small img{
+            width: 400px;
+            height: 300px;
+            border-radius: 50px;
+        }
+        .Medium button{
+            width:300px;
+            height: 50px;
+            background-color: black;
+            color: antiquewhite;
+        }
+        .main{
+            display: flex;
+
+        }
+    </style>
 </head>
 
 <body>
     <h1>Chan's Cafe</h1>
-    <div>
-        <img src="https://img.magnific.com/free-psd/crispy-fried-chicken-burger-with-cheese-vegetables_84443-88993.jpg?semt=ais_hybrid&w=740&q=80"
-            alt="">
+    <div class="main">
+       <div class="Large">
+        <img src="https://images3.alphacoders.com/131/1313839.jpg" alt="">
+        <h2>Choklate</h2>
         <button>Order</button>
     </div>
-    <div>
+    <div class="Medium">
         <img src="https://img.magnific.com/free-photo/delicious-types-chocolate-stack_23-2148238691.jpg?semt=ais_hybrid&w=740&q=80" alt="">
+        <h2>Choklate</h2>
         <button>Order</button>
     </div>
 
-    <div>
-        <img src="https://i.pinimg.com/736x/c5/ad/85/c5ad8525310f5d544effa17ff5c48bbd.jpg" alt="">
+    <div class="Small">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwfE9z4NqhmwsURBd_ZpeVgioZqDm0RoBtGYLFpoH7WAAnZF3OIqS-TxSp&s=10" alt="">
+        <h2>Choklate</h2>
         <button>Order</button>
     </div>
+    </div> 
+
+    <h3>Today special</h3>
 </body>
 
 </html>

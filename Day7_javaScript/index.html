@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #Heading{
+            background-color: brown;
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        #B1{
+            background-color: greenyellow;
+            color: aliceblue;
+            border-radius: 30px;
+        }
+        #B2{
+            background-color:aqua;
+            color:white;
+            border-radius:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="Heading">Is JavaScript is Eassy ?</h1>
+    <button id="B1">Welcome</button>
+    <button id="B2">Bye</button>
+</body>
+<script>
+    document.getElementById("B1").onclick = function(){
+        document.getElementById("Heading").innerHTML = "Yes JavaScript is easy guys"
+    }
+
+    document.getElementById("B2").onclick = function(){
+        document.getElementById("Heading"). innerHTML = "No , if you are not ptatic"
+    }
+</script>
+
+</html>
