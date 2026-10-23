@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+
+        }
+
+        .Main {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-color: dodgerblue;
+        }
+
+        .Sub1 {
+            position: absolute;
+            top: 10vh;
+            left: 20vw;
+            width: 70vw;
+            height: 80vh;
+            background: aliceblue;
+            border-radius: 40px 10px 40px 10px;
+        }
+
+        .Sub2 {
+            left: 25vw;
+            top: 20vh;
+            width: 30vw;
+            height: 50vh;
+            background-color: dodgerblue;
+            position: absolute;
+            border-radius: 80px 20px 80px 20px;
+            font-size: x-large;
+            padding-left: 20px;
+            color: aliceblue;
+        }
+
+        .Sub3 {
+            right: 15vw;
+            top: 30vh;
+            width: 30vw;
+            height: 50vh;
+            background-color: dodgerblue;
+            position: absolute;
+            border-radius: 80px 20px 80px 20px;
+
+        }
+
+        .Sub3 img {
+            width: 90%;
+            height: 90%;
+            border: solid aliceblue 3px;
+            border-radius: 80px 20px 80px 20px;
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+
+        .Sub2 button {
+            width: 180px;
+            height: 50px;
+            background-color: rgb(11, 16, 20);
+            font-size: larger;
+            border-radius: 20px 5px 20px 5px;
+            color: aliceblue;
+            font-weight: bolder;
+            border: solid aliceblue 3px;
+        }
+
+         .Sub4 {
+            display: none;
+            right: 15vw;
+            top: 30vh;
+            width: 30vw;
+            height: 50vh;
+            background-color: dodgerblue;
+            position: absolute;
+            border-radius: 80px 20px 80px 20px;
+
+        }
+
+        .Sub4 img {
+            width: 90%;
+            height: 90%;
+            border: solid aliceblue 3px;
+            border-radius: 80px 20px 80px 20px;
+            margin-left: 5%;
+            margin-top: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Main">
+        <div class="Sub1">
+
+        </div>
+
+        <div class="Sub2">
+            <h1 id="heading1">Rahul Kumar</h1>
+            <h1 id="heading2">Intern In <span style="color: black;">Novitech</span></h1>
+            <h1 id="heading3">Btech Gruadate</h1>
+            <button id="B1" onclick="changeContent()">Explore</button>
+
+        </div>
+
+        <div class="Sub3" id="Sub3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp6VhskpRFn0XUZuUQFC1j0s_ZM9LM1JEk0TYeBmzAg11RAITfb6X6xEXj&s=10"
+                alt="">
+        </div>
+
+        <div class="Sub4" id="Sub4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm1k7adF1bXUusUli299J3g8rpL0wYcE4NEUSkmxRjoPhOEJwzYtn9PYk&s=10"
+                alt="">
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function changeContent() {
+        document.getElementById("heading1").innerHTML="Fresher";
+        document.getElementById("heading2").innerHTML="Placed in Google";
+        document.getElementById("heading3").innerHTML="Mern Developer";
+        document.getElementById("Sub3").style.display="none"
+        document.getElementById("Sub4").style.display="block"
+    }
+</script>
+
+</html>
