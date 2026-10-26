@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #cccccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2563eb;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+        }
+
+        .gender {
+            margin-top: 10px;
+        }
+
+        .gender input {
+            width: auto;
+        }
+
+        .gender label {
+            display: inline;
+            margin-right: 15px;
+            font-weight: normal;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Registration Form</h2>
+
+        <form onsubmit="return submitForm()">
+
+            <!-- Name -->
+            <label for="username">Full Name</label>
+            <input type="text" id="username" placeholder="Enter your full name">
+            <span class="error" id="Message1"></span>
+
+            <!-- Email -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <span class="error" id="Message2"></span>
+
+            <!-- Mobile Number -->
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" placeholder="Enter 10-digit mobile number">
+            <span class="error" id="Message3"></span>
+
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create a password">
+            <span class="error" id="Message4"></span>
+
+            <!-- Confirm Password -->
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" placeholder="Re-enter your password">
+            <span class="error" id="Message5"></span>
+
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob">
+            <span class="error" id="Message6"></span>
+
+            <!-- Gender -->
+            <label>Gender</label>
+
+            <div class="gender">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+
+            <span class="error" id="Message7"></span>
+
+            <!-- Course -->
+            <label for="course">Select Course</label>
+
+            <select id="course">
+                <option value="">-- Select Course --</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="BBA">BBA</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <span class="error" id="Message8"></span>
+
+            <!-- Address -->
+            <label for="address">Address</label>
+
+            <textarea id="address" rows="3"
+                placeholder="Enter your address"></textarea>
+
+            <span class="error" id="Message9"></span>
+
+            <!-- Terms -->
+            <div class="gender">
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the terms and conditions.</label>
+            </div>
+
+            <span class="error" id="Message10"></span>
+
+            <!-- Submit -->
+            <button type="submit">Register Now</button>
+
+            <button type="reset" style="background-color: #666;">
+                Reset Form
+            </button>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        function submitForm() {
+
+            // Get values
+            let username = document.getElementById("username").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let dob = document.getElementById("dob").value;
+            let course = document.getElementById("course").value;
+            let address = document.getElementById("address").value.trim();
+            let terms = document.getElementById("terms").checked;
+
+            let gender = document.querySelector(
+                'input[name="gender"]:checked'
+            );
+
+            // Clear previous errors
+            for (let i = 1; i <= 10; i++) {
+                document.getElementById("Message" + i).innerHTML = "";
+            }
+
+            // Name validation
+            if (username === "") {
+                document.getElementById("Message1").innerHTML =
+                    "Please enter your full name.";
+                return false;
+            }
+
+            // Email validation
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (email === "") {
+                document.getElementById("Message2").innerHTML =
+                    "Please enter your email.";
+                return false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById("Message2").innerHTML =
+                    "Please enter a valid email.";
+                return false;
+            }
+
+            // Mobile validation
+            let mobilePattern = /^[0-9]{10}$/;
+
+            if (!mobilePattern.test(mobile)) {
+                document.getElementById("Message3").innerHTML =
+                    "Enter a valid 10-digit mobile number.";
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 8) {
+                document.getElementById("Message4").innerHTML =
+                    "Password must contain at least 8 characters.";
+                return false;
+            }
+
+            // Confirm password validation
+            if (confirmPassword !== password) {
+                document.getElementById("Message5").innerHTML =
+                    "Passwords do not match.";
+                return false;
+            }
+
+            // Date of birth validation
+            if (dob === "") {
+                document.getElementById("Message6").innerHTML =
+                    "Please select your date of birth.";
+                return false;
+            }
+
+            // Gender validation
+            if (!gender) {
+                document.getElementById("Message7").innerHTML =
+                    "Please select your gender.";
+                return false;
+            }
+
+            // Course validation
+            if (course === "") {
+                document.getElementById("Message8").innerHTML =
+                    "Please select a course.";
+                return false;
+            }
+
+            // Address validation
+            if (address === "") {
+                document.getElementById("Message9").innerHTML =
+                    "Please enter your address.";
+                return false;
+            }
+
+            // Terms validation
+            if (!terms) {
+                document.getElementById("Message10").innerHTML =
+                    "Please accept the terms and conditions.";
+                return false;
+            }
+
+            // Success message
+            alert("Registration successful!");
+
+            return false;
+        }
+
+    </script>
+
+</body>
+</html>
