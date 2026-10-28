@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Personal Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f4f8;
+            padding: 50px 20px;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 400px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #saveBtn {
+            background-color: green;
+            color: white;
+        }
+
+        #clearBtn {
+            background-color: crimson;
+            color: white;
+        }
+
+        #message {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 id="heading">My Profile</h1>
+
+        <p>Enter your name below:</p>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name"
+        >
+
+        <br>
+
+        <button id="saveBtn">Save Name</button>
+
+        <button id="clearBtn">Clear Name</button>
+
+        <h2 id="message"></h2>
+
+    </div>
+
+    <script>
+        // Select HTML elements
+        let username = document.getElementById("username");
+        let saveBtn = document.getElementById("saveBtn");
+        let clearBtn = document.getElementById("clearBtn");
+        let message = document.getElementById("message");
+
+        // Retrieve saved name when the page loads
+        let savedName = localStorage.getItem("username");
+
+        if (savedName !== null) {
+            username.value = savedName;
+            message.textContent = "Welcome back, " + savedName + "!";
+        }
+
+        // Save name when the button is clicked
+        saveBtn.addEventListener("click", function() {
+
+            let name = username.value.trim();
+
+            if (name === "") {
+                message.textContent = "Please enter your name.";
+                return;
+            }
+
+            localStorage.setItem("username", name);
+
+            message.textContent = "Welcome, " + name + "!";
+
+            message.style.color = "green";
+        });
+
+        // Clear saved name
+        clearBtn.addEventListener("click", function() {
+
+            localStorage.removeItem("username");
+
+            username.value = "";
+
+            message.textContent = "Saved name cleared.";
+
+            message.style.color = "red";
+        });
+    </script>
+
+</body>
+</html>
