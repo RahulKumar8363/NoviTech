@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Genrate</title>
+</head>
+<body>
+    <script>
+        class IDModel{
+            constructor(username,userage,userrollno){
+                this.Name = username;
+                this.age = userage;
+                this. roll = userrollno;
+            }
+            printId(){
+                // document.writeln("Name is " + this.name + ", age is" + this.age + "and the rollno is" + this.roll) both are same mehod 
+
+                document.writeln(`Name is ${this.Name}, age is ${this.age}, and the roll no is ${this.roll}`)
+            }
+        }
+        let RahulID = new IDModel("Rahul","24","C31");
+        let PawanID = new IDModel("Pawan","25","C35");
+        RahulID.printId();
+        PawanID.printId(); 
+    </script>
+</body>
+</html>
