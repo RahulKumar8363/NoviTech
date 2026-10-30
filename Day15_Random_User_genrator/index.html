@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <h1>Random User Generator 👤</h1>
+        <p class="subtitle">Discover a random person using a real API!</p>
+
+        <div id="user-card" class="user-card">
+            <img
+                id="user-image"
+                src="https://placehold.co/150x150?text=User"
+                alt="User profile"
+            >
+
+            <h2 id="user-name">Click the button to generate a user</h2>
+
+            <div class="user-info">
+                <p><strong>Email:</strong> <span id="user-email">--</span></p>
+                <p><strong>Phone:</strong> <span id="user-phone">--</span></p>
+                <p><strong>Age:</strong> <span id="user-age">--</span></p>
+                <p><strong>Gender:</strong> <span id="user-gender">--</span></p>
+                <p><strong>Location:</strong> <span id="user-location">--</span></p>
+                <p><strong>Country:</strong> <span id="user-country">--</span></p>
+            </div>
+        </div>
+
+        <button id="generate-btn" type="button">
+            Generate Random User
+        </button>
+
+        <p id="status" role="status" aria-live="polite"></p>
+    </main>
+
+</body>
+</html>
