@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow — Smart Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="TaskFlow home"><span class="brand-mark">✓</span> TaskFlow</a>
+    <span class="top-note">A little progress every day.</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h1>Make room for<br><span>great work.</span></h1>
+      <p class="subtitle">Plan your day, track your progress, and keep moving forward.</p>
+      <div class="stats">
+        <article class="stat-card"><span>Total tasks</span><strong id="totalCount">0</strong></article>
+        <article class="stat-card"><span>Completed</span><strong id="completedCount">0</strong></article>
+        <article class="stat-card"><span>Remaining</span><strong id="remainingCount">0</strong></article>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="Task manager">
+      <div class="section-heading">
+        <div><p class="eyebrow">STAY ON TRACK</p><h2>My tasks</h2></div>
+        <span class="today-badge" id="todayLabel">Today</span>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <label class="sr-only" for="taskInput">New task</label>
+        <input id="taskInput" type="text" maxlength="120" placeholder="What needs to get done?" autocomplete="off">
+        <button class="primary-button" type="submit">Add task <span>＋</span></button>
+      </form>
+      <p id="formMessage" class="form-message" role="status"></p>
+
+      <div class="toolbar">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search tasks..." aria-label="Search tasks"></label>
+        <label class="sr-only" for="filterSelect">Filter tasks</label>
+        <select id="filterSelect" class="filter-select">
+          <option value="all">All tasks</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+
+      <div id="taskList" class="task-list" aria-live="polite"></div>
+      <div class="list-footer"><span id="visibleCount">0 tasks</span><button id="clearCompleted" class="text-button" type="button">Clear completed</button></div>
+    </section>
+
+    <section class="tip-card">
+      <div class="tip-icon">✦</div>
+      <div><h3>Small steps add up.</h3><p>Focus on one task at a time. Your progress is saved automatically on this device.</p></div>
+    </section>
+    <footer>Built with HTML, CSS & JavaScript <span>♥</span></footer>
+  </main>
+</body>
+</html>
