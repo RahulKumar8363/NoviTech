@@ -1,0 +1,204 @@
+<!-- 1. What is Git
+
+Git – Version Control System
+
+Git is a free, open-source tool used to track changes in source code.
+
+
+Simple meaning: Git keeps track of every important change you make in your project.
+
+Example:
+- Day 1: Created HTML page.
+- Day 2: Added CSS.
+- Day 3: Added JavaScript.
+- Day 4: Fixed bugs.
+Git helps you track these changes and return to previous versions when needed.
+
+2. What is GitHub?
+
+GitHub – Cloud-based Code Hosting Platform
+
+GitHub allows developers to store, manage and share their Git repositories online.
+
+
+Difference between Git and GitHub:
+Git	GitHub
+Version control tool	Online platform
+Works locally	Works online
+Tracks changes	Hosts repositories
+Uses commits	Stores pushed commits
+
+Website: GitHub
+3. Repository Creation
+What is a Repository?
+
+A repository (Repo) is a place where your project's files and their version history are stored.
+
+Let's create one.
+cultureasdata-uiuc.github.io
+
+
+Steps:
+1. Open GitHub.
+2. Login to your account.
+3. Click the + icon.
+4. Select New repository.
+5. Repository name: day17-git-github
+6. Select Public.
+7. Don't initialize with README for this practice.
+8. Click Create repository.
+Your GitHub repository is ready!
+4. Commit
+What is Commit?
+
+A commit is a saved snapshot of your project's changes in Git.
+
+Think of it as saving a checkpoint in your project.
+
+Example:
+git add .
+git commit -m "Initial project commit"
+
+
+Explanation:
+- git add . – Adds changed files to the staging area.
+- git commit – Saves the staged changes.
+- -m – Adds a message describing the changes.
+Good commit messages:
+git commit -m "Add homepage"
+git commit -m "Fix login page"
+git commit -m "Update navbar design"
+
+
+5. Push
+What is Push?
+
+Push means uploading your local commits from your computer to a remote GitHub repository.
+
+First, open your project folder in VS Code.
+
+Open terminal: `Ctrl + ``
+
+Run these commands one by one:
+git init
+
+
+git add .
+
+
+git commit -m "Initial commit"
+
+
+Connect your GitHub repository:
+git branch -M main
+
+
+git remote add origin https://github.com/YOUR_USERNAME/day17-git-github.git
+
+
+Push your code:
+git push -u origin main
+
+
+Replace YOUR_USERNAME with your actual GitHub username.
+
+<AsyncImage query="Visual Studio Code source control git commit push interface screenshot" aspectRatio="16:9" width="100%" maxHeight={190} fit="contain"/>
+
+<badge color="success">Expected result</badge>
+
+Your VS Code project files should now appear inside your GitHub repository.
+6. Version Control
+What is Version Control?
+
+Version control is a system that tracks changes made to files over time.
+
+Example:
+
+Suppose you create a website.
+- Version 1 – Basic homepage.
+- Version 2 – Added navbar.
+- Version 3 – Added login page.
+- Version 4 – Fixed CSS bugs.
+Git keeps track of these changes.
+
+Useful commands:
+Command	Purpose
+git status	Check file changes
+git log	View commit history
+git diff	See code differences
+git branch	View branches
+git pull	Download remote changes
+git checkout	Switch branches or restore files
+
+7. Deploy Your Project
+What is Deployment?
+
+Deployment means making your project available for other people to access over the internet.
+
+For example, instead of running:
+
+http://localhost:3000
+
+Your project gets a public URL.
+
+<AsyncImage query="Vercel deployment dashboard project live deployment screenshot" aspectRatio="16:9" width="100%" maxHeight={190} fit="contain"/>
+
+Popular deployment platforms:
+
+<box border radius="lg" padding={3} gap={3}>
+  <row align="center" gap={3}>
+    <AsyncImage query="Vercel logo black" aspectRatio="1:1" maxWidth="44px"/>
+    <box flex="1" gap={1}>
+      **<Entity value="Vercel" category="software" disambig="Cloud deployment platform"/>**
+      <text color="secondary" size="xs">Frontend and supported full-stack apps</text>
+      <Link url="https://vercel.com/" title="Visit Vercel"/>
+    </box>
+  </row>
+  <divider color="subtle"/>
+  <row align="center" gap={3}>
+    <AsyncImage query="Netlify logo" aspectRatio="1:1" maxWidth="44px"/>
+    <box flex="1" gap={1}>
+      **<Entity value="Netlify" category="software" disambig="Web hosting and deployment platform"/>**
+      <text color="secondary" size="xs">Frontend websites and web apps</text>
+      <Link url="https://www.netlify.com/" title="Visit Netlify"/>
+    </box>
+  </row>
+  <divider color="subtle"/>
+  <row align="center" gap={3}>
+    <AsyncImage query="Render cloud platform logo" aspectRatio="1:1" maxWidth="44px"/>
+    <box flex="1" gap={1}>
+      **<Entity value="Render" category="software" disambig="Cloud application hosting platform"/>**
+      <text color="secondary" size="xs">Node.js backend and web services</text>
+      <Link url="https://render.com/" title="Visit Render"/>
+    </box>
+  </row>
+</box>
+
+
+For deployment, the general process is:
+1. Push your project to GitHub.
+2. Create an account on your deployment platform.
+3. Connect your GitHub account.
+4. Select your repository.
+5. Configure build settings and environment variables.
+6. Click Deploy.
+7. Get your live website URL.
+Important: Never upload .env, passwords, API keys or database credentials to a public GitHub repository. Use .gitignore and the deployment platform's environment variable settings.
+
+Practical Assignment – Day 17
+Now let's practise all 7 topics in VS Code.
+
+{@body const tasks = ["Install Git and verify git --version","Create a GitHub repository named day17-git-github","Open your project folder in VS Code","Initialize Git using git init","Stage files using git add .","Create your first commit","Connect GitHub using git remote add origin","Push your project using git push -u origin main","Verify your files on GitHub","Deploy your project"]}
+{@body const [done,setDone] = DIL.useState([])}
+<box border radius="lg" padding={3} gap={3}>
+<row align="center" justify="between">
+Your practical progress
+<badge color={done.length===tasks.length?"success":"info"}>{done.length}/{tasks.length} completed</badge>
+</row>
+<box background="surface-tertiary" radius="full" height="8px" clip>
+<box background="#16A34A" height="8px" radius="full" width={$DIL1%}/>
+</box>
+{#each tasks as task,i}
+<checkbox key={i} checked={done.includes(i)} onChange={v=>setDone(old=>v?[...old,i]:old.filter(x=>x!==i))}>{task}</checkbox>
+{/each}
+</box> -->
